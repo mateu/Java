@@ -1,0 +1,33 @@
+While I did not run each and very program, I ran most including at least 
+one pertaining to each of the following topics.
+
+Book One:
+
+Ran class Hello World program.
+Used Eclipse IDE which I'm familiar with.
+
+Book Two:
+
+* Used object instance - Ran another version of Hello World that uses a Greeter class.
+* static variables (class scoped)
+* Scanner objects (reading input)
+* Math class, math operators
+* Loops: while, do/while, for
+* Switch statment.
+* Methods
+* Exceptions - InputMismatchException 
+
+Book 3:
+I did not spend enough time to master the abstract, interface and inner class concepts.
+
+* Found basic template link in 2. to be broken.
+* Implemented Player class with get and set methods on health.
+
+Book 4:
+* Examined multi-dimensional arrays in KnightMoves example which 
+  will probably be useful for the magic square homework problem.
+
+Book 5:
+
+* Implemented regex example
+
