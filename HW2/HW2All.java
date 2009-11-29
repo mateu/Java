@@ -339,9 +339,10 @@ class Robot {
 		default:
 			break;
 		}
-/*		System.out.println("Robot " + name + " now at (" + this.getX() + ", "
-				+ this.getY() + ") facing " + this.direction);
-*/				
+		/*
+		 * System.out.println("Robot " + name + " now at (" + this.getX() + ", "
+		 * + this.getY() + ") facing " + this.direction);
+		 */
 	}
 
 	public static void main(String[] args) {
@@ -376,4 +377,46 @@ class Robot {
 		q.turnLeft();
 		q.report();
 	}
+}
+
+class Tigger {
+	int x, y;
+
+	public Tigger(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public void bounce() {
+		this.x = this.sum_of_digit_squares(this.x);
+		this.y = this.sum_of_digit_squares(this.y);
+	}
+
+	int sum_of_digit_squares(int n) {
+		int number_of_digits = Integer.toString(n).length();
+		int i;
+		int sum_of_squares = 0;
+		for (i = 0; i < number_of_digits; i++) {
+//			System.out.println(i);
+			String digit_string = Integer.toString(n).substring(i, i + 1);
+			int digit = Integer.parseInt(digit_string);
+//			System.out.println("digit: " + digit);
+			sum_of_squares += digit * digit;
+		}
+		return sum_of_squares;
+	}
+
+	public String report() {
+		return "Tigger just bounced to (" + this.x + ", " + this.y	+ ")";
+	}
+
+	public static void main(String[] args) {
+		int a = (int) (Math.random() * 1000), b = (int) (Math.random() * 1000);
+		Tigger u = new Tigger(a, b);
+		for (int i = 0; i < 30; i++) {
+			u.bounce();
+			System.out.println(u.report());
+		}
+	}
+
 }
