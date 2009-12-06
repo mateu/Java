@@ -392,7 +392,7 @@ class Tigger {
 		this.y = this.sum_of_digit_squares(this.y);
 	}
 
-	int sum_of_digit_squares(int n) {
+	private int sum_of_digit_squares(int n) {
 		int number_of_digits = Integer.toString(n).length();
 		int i;
 		int sum_of_squares = 0;

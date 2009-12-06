@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class One {
+class GradeConverter {
 	static Scanner sc = new Scanner(System.in);
 	static final float NUMBER_OUT_OF_RANGE_CODE = -101;
 	static final float STOP_CODE = -1;
