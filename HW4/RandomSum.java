@@ -2,62 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class RandomSum {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int m = (int) (Math.random() * 100) - 50;
-		int n = (int) (Math.random() * 100) - 50;
-		int sum = m + n;
-		System.out.println(sum);
-	}
-}
-
-class Adder {
-	public static void main(String[] args) {
-		JFrame f = new JFrame();
-		Container c = f.getContentPane();
-		c.setLayout(null);
-
-		JTextField t = new JTextField();
-		t.setHorizontalAlignment(JTextField.CENTER);
-		// t.setEditable(false);
-		t.setBounds(200, 40, 40, 20);
-		t.setText("0");
-		c.add(t);
-
-		JButton b = new JButton();
-		b.setBounds(70, 40, 120, 20);
-		b.setText("Add One");
-		c.add(b);
-
-		Counter referee = new Counter(t);
-		b.addActionListener(referee);
-
-		f.setSize(400, 400);
-		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-}
-
-class Counter implements ActionListener {
-	JTextField t;
-
-	Counter(JTextField t) {
-		this.t = t;
-	}
-
-	public void actionPerformed(ActionEvent e) {
-		String val = t.getText();
-		int num = Integer.parseInt(val);
-		num += 1;
-		t.setText(num + "");
-	}
-}
-
 class One extends JFrame {
 	int m = (int) (Math.random() * 100) - 50;
 	int n = (int) (Math.random() * 100) - 50;
@@ -81,7 +25,7 @@ class One extends JFrame {
 		// c.add(b);
 
 		check_sum = new JButton();
-		check_sum.setBounds(20, 120, 180, 20);
+		check_sum.setBounds(50, 100, 120, 20);
 		check_sum.setText("Check Sum");
 		c.add(check_sum);
 
@@ -98,7 +42,7 @@ class One extends JFrame {
 		JTextField t = new JTextField();
 		t.setHorizontalAlignment(JTextField.CENTER);
 		// t.setEditable(false);
-		t.setBounds(200, 40, 40, 20);
+		t.setBounds(180, 100, 40, 20);
 		t.setText("");
 		c.add(t);
 
@@ -108,13 +52,12 @@ class One extends JFrame {
 		check_sum.addActionListener(referee);
 		// down.addActionListener(referee);
 
-		setSize(400, 400);
+		setSize(300, 300);
 		setVisible(true);
 	}
 
 	public static void main(String[] args) {
 		One one = new One();
-		Adder adding = new Adder();
 		one.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
