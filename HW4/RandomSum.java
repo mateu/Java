@@ -2,7 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class One extends JFrame {
+class AddGame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int m = (int) (Math.random() * 100) - 50;
 	int n = (int) (Math.random() * 100) - 50;
 
@@ -10,7 +14,7 @@ class One extends JFrame {
 	private JLabel guess_sum_phrase;
 	private JLabel score_phrase;
 
-	One() {
+	AddGame() {
 		createUserInterface();
 	}
 
@@ -46,7 +50,7 @@ class One extends JFrame {
 		t.setText("");
 		c.add(t);
 
-		Two referee = new Two(check_sum, guess_sum_phrase, score_phrase, t, m,
+		Escolta referee = new Escolta(check_sum, guess_sum_phrase, score_phrase, t, m,
 				n);
 
 		check_sum.addActionListener(referee);
@@ -57,19 +61,19 @@ class One extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		One one = new One();
-		one.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		AddGame play = new AddGame();
+		play.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
 
-class Two implements ActionListener {
+class Escolta implements ActionListener {
 	int my_score = 0;
 	JButton check_sum;
 	JLabel guess_sum_phrase, score_phrase;
 	JTextField t;
 	int m, n;
 
-	Two(JButton check_sum, JLabel guess_sum_phrase, JLabel score_phrase,
+	Escolta(JButton check_sum, JLabel guess_sum_phrase, JLabel score_phrase,
 			JTextField t, int m, int n) {
 		this.check_sum = check_sum;
 		this.guess_sum_phrase = guess_sum_phrase;
@@ -85,14 +89,13 @@ class Two implements ActionListener {
 			if (Integer.parseInt(t.getText()) == this.m + this.n) {
 				System.out.println("you guessed correct!");
 				this.my_score += 1;
-				this.score_phrase.setText("Your score is: " + this.my_score);
 			} else {
 				System.out.println("you guessed INCorrect!");
 				this.my_score -= 1;
-				this.score_phrase.setText("Your score is: " + this.my_score);
 			}
+			this.score_phrase.setText("Your score is: " + this.my_score);
 		} else {
-			System.out.println("What?!");
+			System.out.println("getSource did no return the check_sum JButton!");
 		}
 		m = (int) (Math.random() * 100) - 50;
 		n = (int) (Math.random() * 100) - 50;
